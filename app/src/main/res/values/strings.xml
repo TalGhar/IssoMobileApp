@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">IssoMobileApp</string>
+
+    <!-- Backend part (Back4App) -->
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+    <string name="back4app_app_id">FNSnx94x7yrJpMKbhPjPTeRp71kBMXviAxsF2vzQ</string>
+    <string name="back4app_client_key">rqS3E51Sx4mJjR4ggxqRzqu8huS1rKLNIDbCfucn</string>
+
 </resources>
