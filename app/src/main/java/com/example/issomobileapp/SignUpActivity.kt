@@ -56,14 +56,24 @@ class SignUpActivity : AppCompatActivity() {
         repeatPasswordError = findViewById(R.id.repeatPasswordError)
         usernameError = findViewById(R.id.usernameError)
 
-        signUpButton.setOnClickListener {
-            signUp(email.text.toString(), password.text.toString(), repeatPassword.text.toString(), username.text.toString())
+        val currentUser = ParseUser.getCurrentUser()
 
+        if (currentUser != null) {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        } else {
+
+            signUpButton.setOnClickListener {
+                signUp(email.text.toString(), password.text.toString(), repeatPassword.text.toString(), username.text.toString())
+
+            }
+
+            alreadyHaveButton.setOnClickListener {
+                alreadyHave()
+            }
         }
 
-        alreadyHaveButton.setOnClickListener {
-            alreadyHave()
-        }
+
     }
 
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
