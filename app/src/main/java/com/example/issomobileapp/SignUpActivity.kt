@@ -4,13 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.provider.ContactsContract.CommonDataKinds.Email
 import android.text.TextUtils
 import android.util.Patterns
 import android.view.MotionEvent
-import android.view.View
 import android.view.Window
-import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
@@ -19,8 +16,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-import com.parse.Parse;
-import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
@@ -54,7 +49,7 @@ class SignUpActivity : AppCompatActivity() {
         username = findViewById(R.id.editTextUsername)
 
         signUpButton = findViewById(R.id.signUpButton)
-        alreadyHaveButton = findViewById(R.id.alreadyhave)
+        alreadyHaveButton = findViewById(R.id.alreadyHave)
 
         emailError = findViewById(R.id.emailError)
         passwordError = findViewById(R.id.passwordError)

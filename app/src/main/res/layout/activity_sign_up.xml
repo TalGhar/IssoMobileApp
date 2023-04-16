@@ -70,6 +70,7 @@
         android:id="@+id/editTextEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:autofillHints=""
         android:ems="10"
         android:focusable="true"
@@ -81,8 +82,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextUsername"
-        app:layout_constraintVertical_bias="0.061" />
+        app:layout_constraintTop_toTopOf="@+id/usernameError"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/signUpButton"
@@ -96,7 +97,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextRepeatPassword" />
 
     <TextView
-        android:id="@+id/alreadyhave"
+        android:id="@+id/alreadyHave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
