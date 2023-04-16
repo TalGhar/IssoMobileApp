@@ -18,5 +18,9 @@
     <string name="repeat_password_error">Пароли не совпадают</string>
     <string name="username_error">Неверное имя пользователя</string>
     <string name="username">Имя пользователя</string>
+    <string name="btn_profile">PROFILE</string>
+    <string name="btn_sells">SELLS</string>
+    <string name="btn_main">MAIN</string>
+    <string name="btn_build">BUILD</string>
 
 </resources>

@@ -26,6 +26,15 @@
         android:theme="@style/Theme.IssoMobileApp"
         tools:targetApi="31">
         <activity
+            android:name=".BuildActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SellsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
