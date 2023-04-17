@@ -65,14 +65,12 @@ class SignUpActivity : AppCompatActivity() {
 
             signUpButton.setOnClickListener {
                 signUp(email.text.toString(), password.text.toString(), repeatPassword.text.toString(), username.text.toString())
-
             }
 
             alreadyHaveButton.setOnClickListener {
                 alreadyHave()
             }
         }
-
 
     }
 
@@ -134,8 +132,6 @@ class SignUpActivity : AppCompatActivity() {
 
         return true
     }
-
-
     private fun validate(emailError: TextView, passwordError: TextView, repeatPasswordError: TextView, usernameError: TextView, email: String, password: String, repeatPassword: String, username: String): Boolean {
 
         val fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in)
