@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.provider.ContactsContract.Profile
 import android.util.Log
 import android.view.Window
+import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.issomobileapp.databinding.ActivityMainBinding
 import com.parse.ParseObject
@@ -13,6 +15,9 @@ class MainActivity : AppCompatActivity() {
 
     //region Private Properties
     private lateinit var binding: ActivityMainBinding
+    private lateinit var logOutButton: TextView
+
+
     //endregion
 
     //region Override Functions
