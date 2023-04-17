@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/route"
+    app:startDestination="@id/blankFragmentProfile">
+
+    <fragment
+        android:id="@+id/blankFragmentSells"
+        android:name="com.example.issomobileapp.BlankFragmentSells"
+        tools:layout="@layout/blank_sells"
+        android:label="blank_sells">
+        <action
+            android:id="@+id/action_blankFragmentSells_to_blankFragmentBuild"
+            app:destination="@id/blankFragmentBuild" />
+    </fragment>
+    <fragment
+        android:id="@+id/blankFragmentBuild"
+        android:name="com.example.issomobileapp.BlankFragmentBuild"
+        tools:layout="@layout/blank_build"
+        android:label="blank_build">
+        <action
+            android:id="@+id/action_blankFragmentBuild_to_blankFragmentProfile"
+            app:destination="@id/blankFragmentProfile" />
+    </fragment>
+    <fragment
+        android:id="@+id/blankFragmentProfile"
+        android:name="com.example.issomobileapp.BlankFragmentProfile"
+        tools:layout="@layout/blank_profile"
+        android:label="blank_profile">
+        <action
+            android:id="@+id/action_blankFragmentProfile_to_blankFragmentSells"
+            app:destination="@id/blankFragmentSells" />
+        <action
+            android:id="@+id/action_blankFragmentProfile_to_blankFragmentBuild"
+            app:destination="@id/blankFragmentBuild" />
+    </fragment>
+</navigation>

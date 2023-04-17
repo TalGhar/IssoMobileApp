@@ -1,7 +1,9 @@
 package com.example.issomobileapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+
 
 class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -9,7 +11,7 @@ class ProfileActivity : AppCompatActivity() {
         setContentView(R.layout.activity_profile)
     }
 
-    override fun onClick() {
-
+    fun myButtonClickHandler(view: View?) {
+        // Действия, выполняемые при нажатии на кнопку
     }
 }
