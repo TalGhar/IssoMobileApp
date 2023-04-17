@@ -18,5 +18,7 @@
     <string name="repeat_password_error">Пароли не совпадают</string>
     <string name="username_error">Неверное имя пользователя</string>
     <string name="username">Имя пользователя</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
