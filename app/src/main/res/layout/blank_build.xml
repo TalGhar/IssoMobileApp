@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/pageBuild"
@@ -7,12 +7,152 @@
     android:layout_height="match_parent"
     tools:context=".BlankFragmentBuild">
 
+
+    <TextView
+        android:id="@+id/textAdv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/textAdv"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints,TextSizeCheck,VisualLintOverlap" />
+
+
+    <HorizontalScrollView
+        android:id="@+id/scrollAdv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textAdv">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="@string/image1"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="@string/image2"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <ImageView
+                android:id="@+id/image3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="@string/image3"
+                tools:ignore="ImageContrastCheck"
+                tools:src="@tools:sample/avatars" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/textBuild"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/textBuild"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/scrollAdv"
+        tools:ignore="MissingConstraints,VisualLintOverlap" />
+
+    <Button
+        android:id="@+id/btnFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="3dp"
+        android:text="@string/btnFavorite"
+        app:layout_constraintEnd_toStartOf="@+id/btnFlats"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textBuild"
+        tools:ignore="MissingConstraints,VisualLintOverlap" />
+
+
+    <Button
+        android:id="@+id/btnFlats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/btnFlasts"
+        app:layout_constraintEnd_toStartOf="@+id/btnCommerce"
+        app:layout_constraintStart_toEndOf="@+id/btnFavorite"
+        app:layout_constraintTop_toBottomOf="@+id/textBuild"
+        tools:ignore="MissingConstraints,VisualLintOverlap" />
+
+    <Button
+        android:id="@+id/btnCommerce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/btnCommerce"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnFlats"
+        app:layout_constraintTop_toBottomOf="@+id/textBuild"
+        tools:ignore="MissingConstraints,VisualLintOverlap" />
+
+    <TextView
+        android:id="@+id/textNews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/textNews"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/btnFavorite"
+        tools:ignore="MissingConstraints,VisualLintOverlap" />
+
+    <HorizontalScrollView
+        android:id="@+id/ScrollNews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textNews">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/image4"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="@string/image4"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <ImageView
+                android:id="@+id/image5"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="@string/image5"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <ImageView
+                android:id="@+id/image6"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="@string/image6"
+                tools:src="@tools:sample/avatars" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:layout_gravity="bottom"
         android:orientation="horizontal"
-        tools:ignore="UselessParent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/btnBuild"
@@ -47,113 +187,5 @@
             tools:ignore="VisualLintButtonSize" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textAdv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/textAdv"
-        tools:ignore="VisualLintOverlap" />
 
-    <ScrollView
-        android:id="@+id/scrollAdv"
-        android:layout_width="match_parent"
-        android:layout_height="130dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/image1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:src="@tools:sample/backgrounds/scenic"
-                android:contentDescription="@string/image1" />
-
-            <ImageView
-                android:id="@+id/image2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:src="@tools:sample/backgrounds/scenic"
-                android:contentDescription="@string/image2" />
-
-            <ImageView
-                android:id="@+id/image3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:src="@tools:sample/avatars"
-                android:contentDescription="@string/image3" />
-        </LinearLayout>
-    </ScrollView>
-
-    <TextView
-        android:id="@+id/textBuild"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textBuild"
-        tools:ignore="VisualLintOverlap" />
-
-    <Button
-        android:id="@+id/btnFavorite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btnFavorite"
-        tools:ignore="VisualLintOverlap" />
-
-    <Button
-        android:id="@+id/btnFlats"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btnFlasts"
-        tools:ignore="VisualLintOverlap" />
-
-    <Button
-        android:id="@+id/btnCommerce"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btnCommerce"
-        tools:ignore="VisualLintOverlap" />
-
-    <TextView
-        android:id="@+id/textNews"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textNews"
-        tools:ignore="VisualLintOverlap" />
-
-    <ScrollView
-        android:id="@+id/scrollNews"
-        android:layout_width="match_parent"
-        android:layout_height="130dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/image4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:src="@tools:sample/backgrounds/scenic"
-                android:contentDescription="@string/image4" />
-
-            <ImageView
-                android:id="@+id/image5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:src="@tools:sample/backgrounds/scenic"
-                android:contentDescription="@string/image5" />
-
-            <ImageView
-                android:id="@+id/image6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:src="@tools:sample/avatars"
-                android:contentDescription="@string/image6" />
-
-        </LinearLayout>
-    </ScrollView>
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

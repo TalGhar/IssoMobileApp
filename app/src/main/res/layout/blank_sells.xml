@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/pageSells"
@@ -7,11 +7,366 @@
     android:layout_height="match_parent"
     tools:context=".BlankFragmentSells">
 
+    <TextView
+        android:id="@+id/textFlat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/textFlats"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="411dp" />
+
     <LinearLayout
+        android:id="@+id/LayoutFlats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/textFlat">
+
+        <LinearLayout
+            android:id="@+id/LayoutFlat1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageFlat1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:contentDescription="@string/imageFlat1"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <RatingBar
+                android:id="@+id/ratingFlat1"
+                android:layout_width="100dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                tools:ignore="NestedWeights" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LayoutFlat2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageFlat2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:contentDescription="@string/imageFlat2"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <RatingBar
+                android:id="@+id/ratingFlat2"
+                android:layout_width="100dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                tools:ignore="NestedWeights" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LayoutFlat3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageFlat3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:contentDescription="@string/imageFlat3"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <RatingBar
+                android:id="@+id/ratingFlat3"
+                android:layout_width="100dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                tools:ignore="NestedWeights" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textHouse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/textHouse"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/LayoutFlats" />
+
+    <LinearLayout
+        android:id="@+id/LayoutHouses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/textHouse"
+        tools:layout_editor_absoluteX="0dp"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:id="@+id/LayoutHouse1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageHouse1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/imageHouse1"
+                tools:src="@tools:sample/backgrounds/scenic"
+                tools:ignore="NestedWeights" />
+
+            <RatingBar
+                android:id="@+id/ratingHouse1"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LayoutHouse2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageHouse2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/imageHouse2"
+                tools:src="@tools:sample/backgrounds/scenic"
+                tools:ignore="NestedWeights" />
+
+            <RatingBar
+                android:id="@+id/ratingHouse2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LayoutHouse3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageHouse3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/imageHouse3"
+                tools:src="@tools:sample/backgrounds/scenic"
+                tools:ignore="NestedWeights" />
+
+            <RatingBar
+                android:id="@+id/ratingHouse3"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:mirrorForRtl="false"
+                android:nestedScrollingEnabled="false" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textCommercial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/textCommercial"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/LayoutHouses" />
+
+    <LinearLayout
+        android:id="@+id/LayoutCommercials"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/textCommercial"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:id="@+id/LayoutCommercial1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageCommercial1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/imageCommercial1"
+                tools:src="@tools:sample/backgrounds/scenic"
+                tools:ignore="NestedWeights" />
+
+            <RatingBar
+                android:id="@+id/ratingCommercial1"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LayoutCommercial2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageCommercial2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/imageCommercial2"
+                tools:src="@tools:sample/backgrounds/scenic"
+                tools:ignore="NestedWeights" />
+
+            <RatingBar
+                android:id="@+id/ratingCommercial2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LayoutCommercial3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageCommercial3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/imageCommercial3"
+                tools:src="@tools:sample/backgrounds/scenic"
+                tools:ignore="NestedWeights" />
+
+            <RatingBar
+                android:id="@+id/ratingCommercial3"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textSpecial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/textSpecial"
+        android:textSize="24sp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/LayoutCommercials" />
+
+    <LinearLayout
+        android:id="@+id/LayoutSpecials"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/textSpecial"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:id="@+id/LayoutSpecial1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageSpecial1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/imageSpecial1"
+                tools:ignore="NestedWeights"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <RatingBar
+                android:id="@+id/ratingSpecial1"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LayoutSpecial2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageSpecial2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/imageSpecial2"
+                tools:src="@tools:sample/backgrounds/scenic"
+                tools:ignore="NestedWeights" />
+
+            <RatingBar
+                android:id="@+id/ratingSpecial2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LayoutSpecial3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageSpecial3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/imageSpecial3"
+                tools:src="@tools:sample/backgrounds/scenic"
+                tools:ignore="NestedWeights" />
+
+            <RatingBar
+                android:id="@+id/ratingSpecial3"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:layout_gravity="bottom"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="UselessParent">
 
         <Button
@@ -47,321 +402,4 @@
             tools:ignore="VisualLintButtonSize" />
     </LinearLayout>
 
-    <SearchView
-        android:id="@+id/Searching"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/textFlat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/textFlats" />
-
-        <LinearLayout
-            android:id="@+id/LayoutFlats"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:baselineAligned="false">
-
-            <LinearLayout
-                android:id="@+id/LayoutFlat1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageFlat1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:src="@tools:sample/backgrounds/scenic"
-                    android:contentDescription="@string/imageFlat1" />
-
-                <RatingBar
-                    android:id="@+id/ratingFlat1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    tools:ignore="NestedWeights" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/LayoutFlat2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageFlat2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:src="@tools:sample/backgrounds/scenic"
-                    android:contentDescription="@string/imageFlat2" />
-
-                <RatingBar
-                    android:id="@+id/ratingFlat2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    tools:ignore="NestedWeights" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/LayoutFlat3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageFlat3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:src="@tools:sample/backgrounds/scenic"
-                    android:contentDescription="@string/imageFlat3" />
-
-                <RatingBar
-                    android:id="@+id/ratingFlat3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    tools:ignore="NestedWeights" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/textHouse"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/textHouse" />
-
-        <LinearLayout
-            android:id="@+id/LayoutHouses"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:id="@+id/LayoutHouse1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageHouse1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    tools:src="@tools:sample/backgrounds/scenic"
-                    android:contentDescription="@string/imageHouse1" />
-
-                <RatingBar
-                    android:id="@+id/ratingHouse1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/LayoutHouse2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageHouse2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    tools:src="@tools:sample/backgrounds/scenic"
-                    android:contentDescription="@string/imageHouse2" />
-
-                <RatingBar
-                    android:id="@+id/ratingHouse2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/LayoutHouse3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageHouse3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    tools:src="@tools:sample/backgrounds/scenic"
-                    android:contentDescription="@string/imageHouse3" />
-
-                <RatingBar
-                    android:id="@+id/ratingHouse3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/textCommercial"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/textCommercial" />
-
-        <LinearLayout
-            android:id="@+id/LayoutCommercials"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:id="@+id/LayoutCommercial1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageCommercial1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    tools:src="@tools:sample/backgrounds/scenic"
-                    android:contentDescription="@string/imageCommercial1" />
-
-                <RatingBar
-                    android:id="@+id/ratingCommercial1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/LayoutCommercial2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageCommercial2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    tools:src="@tools:sample/backgrounds/scenic"
-                    android:contentDescription="@string/imageCommercial2" />
-
-                <RatingBar
-                    android:id="@+id/ratingCommercial2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/LayoutCommercial3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageCommercial3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    tools:src="@tools:sample/backgrounds/scenic"
-                    android:contentDescription="@string/imageCommercial3" />
-
-                <RatingBar
-                    android:id="@+id/ratingCommercial3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/textSpecial"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/textSpecial" />
-
-        <LinearLayout
-            android:id="@+id/LayoutSpecials"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:id="@+id/LayoutSpecial1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageSpecial1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    tools:src="@tools:sample/backgrounds/scenic"
-                    android:contentDescription="@string/imageSpecial1" />
-
-                <RatingBar
-                    android:id="@+id/ratingSpecial1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/LayoutSpecial2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageSpecial2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    tools:src="@tools:sample/backgrounds/scenic"
-                    android:contentDescription="@string/imageSpecial2" />
-
-                <RatingBar
-                    android:id="@+id/ratingSpecial2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/LayoutSpecial3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageSpecial3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    tools:src="@tools:sample/backgrounds/scenic"
-                    android:contentDescription="@string/imageSpecial3" />
-
-                <RatingBar
-                    android:id="@+id/ratingSpecial3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-            </LinearLayout>
-        </LinearLayout>
-
-    </SearchView>
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
