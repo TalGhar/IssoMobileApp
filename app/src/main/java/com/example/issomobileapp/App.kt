@@ -2,6 +2,7 @@ package com.example.issomobileapp
 
 import android.app.Application
 import android.content.Intent
+import androidx.appcompat.app.AppCompatDelegate
 import com.parse.Parse;
 import com.parse.ParseUser
 

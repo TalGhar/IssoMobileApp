@@ -31,13 +31,6 @@ class SignInActivity : AppCompatActivity() {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.activity_sign_in)
 
-        val currentUser = ParseUser.getCurrentUser()
-
-        if (currentUser != null) {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-
         username = findViewById(R.id.editTexLoginUsername)
         password = findViewById(R.id.editTextLoginPassword)
 

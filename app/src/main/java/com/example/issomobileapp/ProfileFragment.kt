@@ -6,13 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import com.example.issomobileapp.databinding.FragmentProfileBinding
 import com.parse.ParseException
 import com.parse.ParseUser
-import com.parse.RequestPasswordResetCallback
-import kotlin.math.log
+import android.os.Handler
+
 
 class ProfileFragment : Fragment() {
 
@@ -46,15 +45,18 @@ class ProfileFragment : Fragment() {
     }
     //endregion
 
+    //region Private Functions
     private fun logOut() {
         ParseUser.logOutInBackground { e: ParseException? ->
             if (e == null) {
                 val intent = Intent(context, SignInActivity::class.java)
                 startActivity(intent)
+                activity?.finish()
             }
             else Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
         }
 
     }
+    //endregion
 
 }
