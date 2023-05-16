@@ -69,14 +69,17 @@ class SignInActivity : AppCompatActivity() {
 
     private fun signIn(username: String, password: String) {
 
-        ParseUser.logInInBackground(username, password) { parseUser: ParseUser?, parseException: ParseException? ->
+        ParseUser.logInInBackground(
+            username,
+            password
+        ) { parseUser: ParseUser?, parseException: ParseException? ->
             if (parseUser != null) {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             } else {
                 ParseUser.logOut()
                 if (parseException != null) {
-                    Toast.makeText(this,parseException.message, Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, parseException.message, Toast.LENGTH_LONG).show()
                 }
             }
         }
