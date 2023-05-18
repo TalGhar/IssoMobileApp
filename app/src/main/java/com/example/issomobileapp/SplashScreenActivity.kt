@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatDelegate
 import com.parse.ParseUser
 
 class SplashScreenActivity : AppCompatActivity() {
+
+    // MARK: Override Functions
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
@@ -19,6 +21,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
     }
 
+    // MARK: Private Functions
     private fun checkExistence() {
 
         val currentUser = ParseUser.getCurrentUser()

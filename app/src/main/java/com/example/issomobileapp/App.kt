@@ -7,7 +7,8 @@ import com.parse.Parse;
 import com.parse.ParseUser
 
 class App : Application() {
-    //region Override Functions
+
+    // MARK: Override Functions
     override fun onCreate() {
         super.onCreate()
         Parse.initialize(
@@ -19,5 +20,4 @@ class App : Application() {
         );
 
     }
-    //endregion
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="false"
@@ -12,23 +13,24 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+
         <ImageView
-            android:id="@+id/dialog_image_view"
+            android:id="@+id/sales_expanded_image"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_background"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside" />
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="false"
+            />
 
         <TextView
-            android:id="@+id/dialog_text_view"
+            android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/rounded_background"
-            android:backgroundTint="#EDEDED"
-            android:padding="12dp"
+            android:layout_margin="8dp"
+            android:background="#EFEFEF"
+            android:padding="4dp"
+            android:text="@string/lorem"
+            android:textColor="#000000"
             android:textSize="16sp" />
-
     </LinearLayout>
 </ScrollView>

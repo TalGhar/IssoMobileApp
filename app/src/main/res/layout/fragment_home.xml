@@ -74,7 +74,6 @@
                                     android:padding="8dp"
                                     android:shadowColor="#000000"
                                     android:shadowRadius="12"
-                                    android:text="Заголовок новости"
                                     android:textColor="#ffffff"
                                     android:textSize="14sp" />
 
@@ -112,7 +111,6 @@
                                     android:padding="8dp"
                                     android:shadowColor="#000000"
                                     android:shadowRadius="12"
-                                    android:text="Заголовок новости"
                                     android:textColor="#ffffff"
                                     android:textSize="14sp" />
 

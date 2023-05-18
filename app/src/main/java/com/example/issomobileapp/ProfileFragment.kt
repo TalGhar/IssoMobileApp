@@ -18,7 +18,7 @@ class ProfileFragment : Fragment() {
     private lateinit var binding: FragmentProfileBinding
 
 
-    //region Override Functions
+    // MARK: Override Functions
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -37,26 +37,23 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //binding.apply {
-           // logout.setOnClickListener {
-         //       logOut()
+        // logout.setOnClickListener {
+        //       logOut()
         //    }
         //}
 
     }
-    //endregion
 
-    //region Private Functions
+    // MARK: Private Functions
     private fun logOut() {
         ParseUser.logOutInBackground { e: ParseException? ->
             if (e == null) {
                 val intent = Intent(context, SignInActivity::class.java)
                 startActivity(intent)
                 activity?.finish()
-            }
-            else Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
+            } else Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
         }
 
     }
-    //endregion
 
 }

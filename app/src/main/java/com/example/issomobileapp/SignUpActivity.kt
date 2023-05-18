@@ -21,7 +21,7 @@ import com.parse.SignUpCallback;
 
 class SignUpActivity : AppCompatActivity() {
 
-    //region Private Properties
+    // MARK: Private Properties
     private lateinit var email: EditText
     private lateinit var password: EditText
     private lateinit var repeatPassword: EditText
@@ -34,9 +34,8 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var passwordError: TextView
     private lateinit var repeatPasswordError: TextView
     private lateinit var usernameError: TextView
-    //endregion
 
-    //region Override Functions
+    // MARK: Override Functions
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -77,9 +76,8 @@ class SignUpActivity : AppCompatActivity() {
         }
         return super.dispatchTouchEvent(ev)
     }
-    //endregion
 
-    //region Private Functions
+    // MARK: Private Functions
     private fun hideKeyBoard() {
         val inputManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputManager.hideSoftInputFromWindow(window.decorView.windowToken, 0)
@@ -202,7 +200,6 @@ class SignUpActivity : AppCompatActivity() {
             username
         )
     }
-    //endregion
 
 
 }
