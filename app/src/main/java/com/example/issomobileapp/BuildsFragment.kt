@@ -8,7 +8,7 @@ import android.view.ViewGroup
 
 class BuildsFragment : Fragment() {
 
-    //region Override Functions
+    // MARK: Override Functions
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -21,6 +21,6 @@ class BuildsFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_builds, container, false)
     }
-    //endregion
+
 
 }

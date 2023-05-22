@@ -6,20 +6,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import com.example.issomobileapp.databinding.FragmentProfileBinding
 import com.parse.ParseException
 import com.parse.ParseUser
-import com.parse.RequestPasswordResetCallback
-import kotlin.math.log
+import android.os.Handler
+
 
 class ProfileFragment : Fragment() {
 
     private lateinit var binding: FragmentProfileBinding
 
 
-    //region Override Functions
+    // MARK: Override Functions
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -37,22 +36,22 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.apply {
-            logout.setOnClickListener {
-                logOut()
-            }
-        }
+        //binding.apply {
+        // logout.setOnClickListener {
+        //       logOut()
+        //    }
+        //}
 
     }
-    //endregion
 
+    // MARK: Private Functions
     private fun logOut() {
         ParseUser.logOutInBackground { e: ParseException? ->
             if (e == null) {
                 val intent = Intent(context, SignInActivity::class.java)
                 startActivity(intent)
-            }
-            else Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
+                activity?.finish()
+            } else Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
         }
 
     }

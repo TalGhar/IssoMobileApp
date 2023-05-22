@@ -13,14 +13,12 @@ import com.parse.ParseObject
 
 class MainActivity : AppCompatActivity() {
 
-    //region Private Properties
+    // MARK: Private Properties
     private lateinit var binding: ActivityMainBinding
     private lateinit var logOutButton: TextView
 
 
-    //endregion
-
-    //region Override Functions
+    // MARK: Override Functions
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -42,9 +40,8 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-    //endregion
 
-    //region Private Functions
+    // MARK: Private Functions
     private fun replaceFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
@@ -52,6 +49,5 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.commit()
 
     }
-    //endregion
 
 }

@@ -16,27 +16,19 @@ import com.parse.ParseUser
 
 class SignInActivity : AppCompatActivity() {
 
-    //region Private Properties
+    // MARK: Private Properties
     private lateinit var username: EditText
     private lateinit var password: EditText
 
     private lateinit var signInButton: Button
 
     private lateinit var stillNot: TextView
-    //endregion
 
-    //region Override Functions
+    // MARK: Override Functions
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.activity_sign_in)
-
-        val currentUser = ParseUser.getCurrentUser()
-
-        if (currentUser != null) {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
 
         username = findViewById(R.id.editTexLoginUsername)
         password = findViewById(R.id.editTextLoginPassword)
@@ -61,9 +53,8 @@ class SignInActivity : AppCompatActivity() {
         }
         return super.dispatchTouchEvent(ev)
     }
-    //endregion
 
-    //region Private Functions
+    // MARK: Private Functions
     private fun hideKeyBoard() {
         val inputManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputManager.hideSoftInputFromWindow(window.decorView.windowToken, 0)
@@ -76,19 +67,21 @@ class SignInActivity : AppCompatActivity() {
 
     private fun signIn(username: String, password: String) {
 
-        ParseUser.logInInBackground(username, password) { parseUser: ParseUser?, parseException: ParseException? ->
+        ParseUser.logInInBackground(
+            username,
+            password
+        ) { parseUser: ParseUser?, parseException: ParseException? ->
             if (parseUser != null) {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             } else {
                 ParseUser.logOut()
                 if (parseException != null) {
-                    Toast.makeText(this,parseException.message, Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, parseException.message, Toast.LENGTH_LONG).show()
                 }
             }
         }
 
     }
-    //endregion
 
 }
