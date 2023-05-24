@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
+import androidx.core.graphics.drawable.toDrawable
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.issomobileapp.databinding.FragmentHomeBinding
 
@@ -119,6 +120,20 @@ class HomeFragment : Fragment() {
             dialogImageView?.setImageDrawable(sevasimageView.drawable)
             dialog?.show()
         }
+
+        val favouriteIcon = binding?.favouriteButton
+        var flag = false
+
+        favouriteIcon?.setOnClickListener {
+            if (!flag) {
+                favouriteIcon?.setImageResource(R.drawable.favourite_icon_active)
+                flag = true
+            } else {
+                favouriteIcon?.setImageResource(R.drawable.favourite_icon)
+                flag = false
+            }
+        }
+
 
     }
 
