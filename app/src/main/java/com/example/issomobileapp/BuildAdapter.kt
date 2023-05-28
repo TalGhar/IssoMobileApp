@@ -17,6 +17,7 @@ class BuildAdapter : RecyclerView.Adapter<BuildAdapter.BuildsHolder>() {
         fun bind(build: Build) = with(binding) {
             buildImage.setImageResource(build.imageId)
             buildTitle.text = build.title
+            buildCity.text = build.city
             buildRooms.text = "Комнат: " + build.roomCount.toString()
             buildSize.text = "Квадратура: " + build.size.toString() + " м²"
             buildPrice.text = "Цена: " + build.price.toString() + " ₽"
@@ -39,7 +40,15 @@ class BuildAdapter : RecyclerView.Adapter<BuildAdapter.BuildsHolder>() {
     }
 
     fun addBuild(build: Build) {
-        buildList.add(build)
+        if (!buildList.contains(build)) {
+            buildList.add(build)
+            notifyDataSetChanged()
+        }
+    }
+
+
+    fun removeBuild(build: Build) {
+        buildList.remove(build)
         notifyDataSetChanged()
     }
 

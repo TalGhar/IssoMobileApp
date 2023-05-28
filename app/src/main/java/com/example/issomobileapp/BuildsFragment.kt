@@ -30,6 +30,13 @@ class BuildsFragment : Fragment() {
         "Дом 4",
     )
 
+    private val cityList = listOf(
+        "Севастополь",
+        "Евпатория",
+        "Мирный",
+        "Поповка",
+    )
+
     // TODO: По этим трём нужно добавить фильтр
     private val roomList = listOf(
         1,
@@ -40,7 +47,7 @@ class BuildsFragment : Fragment() {
     private val priceList = listOf(
         1500000,
         7000000,
-        25000000,
+        20000000,
         10000000
     )
     private val sizeList = listOf(
@@ -70,7 +77,15 @@ class BuildsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        filters()
+        apply_filters()
 
+        swipeRefreshLayout = view.findViewById(R.id.swipeRefreshLayout)
+
+        swipeRefreshLayout.setOnRefreshListener {
+            swipeRefreshLayout.isRefreshing = false
+
+        }
 
     }
 
@@ -81,11 +96,71 @@ class BuildsFragment : Fragment() {
             recyclerView.adapter = adapter
 
             for (i in imageList.indices) {
-                val build =
-                    Build(imageList[i], titleList[i], roomList[i], priceList[i], sizeList[i])
+                val build = Build(
+                    imageList[i],
+                    titleList[i],
+                    cityList[i],
+                    roomList[i],
+                    priceList[i],
+                    sizeList[i]
+                )
                 adapter.addBuild(build)
+
             }
 
+        }
+    }
+
+    private fun filters() {
+        binding?.apply {
+            filter.setOnClickListener {
+                if (linearLayout2.visibility == View.VISIBLE) {
+                    linearLayout2.visibility = View.GONE
+
+                } else {
+                    linearLayout2.visibility = View.VISIBLE
+                }
+            }
+        }
+    }
+
+    private fun apply_filters() {
+        binding?.apply {
+            searchButton.setOnClickListener {
+                for (i in imageList.indices) {
+                    if ((cityList[i] == spinner.selectedItem || spinner.selectedItem == "Все") &&
+                        (priceMin.text.isEmpty() || priceList[i].toInt() >= priceMin.text.toString()
+                            .toInt()) &&
+                        (priceMax.text.isEmpty() || priceList[i].toInt() <= priceMax.text.toString()
+                            .toInt()) &&
+                        (numRooms.text.isEmpty() || roomList[i].toInt() == numRooms.text.toString()
+                            .toInt()) &&
+                        (size.text.isEmpty() || sizeList[i].toInt() == size.text.toString().toInt())
+                    ) {
+                        val build = Build(
+                            imageList[i],
+                            titleList[i],
+                            cityList[i],
+                            roomList[i],
+                            priceList[i],
+                            sizeList[i]
+                        )
+                        adapter.addBuild(build)
+                    } else {
+                        val build = Build(
+                            imageList[i],
+                            titleList[i],
+                            cityList[i],
+                            roomList[i],
+                            priceList[i],
+                            sizeList[i]
+                        )
+                        adapter.removeBuild(build)
+                    }
+
+                }
+
+            }
         }
     }
 
