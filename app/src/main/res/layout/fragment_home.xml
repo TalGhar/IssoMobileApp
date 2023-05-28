@@ -123,59 +123,6 @@
 
                 </HorizontalScrollView>
 
-                <!-- Типы построек -->
-                <TextView
-                    android:id="@+id/building_types_header"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"
-                    android:text="Типы построек"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="16dp">
-
-                    <!-- Квадратная кнопка с границей и текстом -->
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="80dp"
-                        android:layout_height="110dp"
-                        android:layout_marginRight="8dp"
-                        android:elevation="4dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:background="@drawable/square_background"
-                                android:scaleType="centerCrop" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="30dp"
-                                android:padding="8dp"
-                                android:text="Тип 1"
-                                android:textAlignment="center"
-                                android:textSize="12sp" />
-
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-
-                    <!-- Добавьте еще 2-3 таких квадратных кнопки для типов построек -->
-
-                </LinearLayout>
 
                 <!-- Заголовок блока рекомендаций -->
                 <TextView

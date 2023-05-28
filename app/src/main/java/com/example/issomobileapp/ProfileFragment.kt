@@ -10,18 +10,15 @@ import android.widget.Toast
 import com.example.issomobileapp.databinding.FragmentProfileBinding
 import com.parse.ParseException
 import com.parse.ParseUser
-import android.os.Handler
 
 
 class ProfileFragment : Fragment() {
 
     private lateinit var binding: FragmentProfileBinding
 
-
     // MARK: Override Functions
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -29,6 +26,7 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+
         binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root
     }

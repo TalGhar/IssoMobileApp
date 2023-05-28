@@ -1,15 +1,22 @@
 package com.example.issomobileapp
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.issomobileapp.databinding.BuildItemBinding
 
 class BuildAdapter : RecyclerView.Adapter<BuildAdapter.BuildsHolder>() {
 
-    val buildList = ArrayList<Build>()
+    // MARK: Public Properties
 
+    val buildList = ArrayList<Build>()
+    var onBuildClick: ((Build) -> Unit)? = null
+
+    // MARK: Inner Class
     class BuildsHolder(item: View) : RecyclerView.ViewHolder(item) {
 
         val binding = BuildItemBinding.bind(item)
@@ -26,19 +33,25 @@ class BuildAdapter : RecyclerView.Adapter<BuildAdapter.BuildsHolder>() {
 
     }
 
+    // MARK: Override Functions
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BuildsHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.build_item, parent, false)
         return BuildsHolder(view)
     }
 
     override fun onBindViewHolder(holder: BuildsHolder, position: Int) {
+        val build = buildList[position]
         holder.bind(buildList[position])
+        holder.itemView.setOnClickListener {
+            onBuildClick?.invoke(build)
+        }
     }
 
     override fun getItemCount(): Int {
         return buildList.size
     }
 
+    // MARK: Public Functions
     fun addBuild(build: Build) {
         if (!buildList.contains(build)) {
             buildList.add(build)

@@ -1,11 +1,13 @@
 package com.example.issomobileapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.issomobileapp.databinding.FragmentBuildsBinding
@@ -79,7 +81,6 @@ class BuildsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         filters()
         apply_filters()
-
         swipeRefreshLayout = view.findViewById(R.id.swipeRefreshLayout)
 
         swipeRefreshLayout.setOnRefreshListener {
@@ -104,7 +105,16 @@ class BuildsFragment : Fragment() {
                     priceList[i],
                     sizeList[i]
                 )
+
                 adapter.addBuild(build)
+
+            }
+
+
+            adapter.onBuildClick = {
+                val intent = Intent(context, BuildExpanded::class.java)
+                intent.putExtra("build", it)
+                startActivity(intent)
 
             }
 
