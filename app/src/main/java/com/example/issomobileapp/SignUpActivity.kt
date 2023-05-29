@@ -58,30 +58,34 @@ class SignUpActivity : AppCompatActivity() {
         usernameError = findViewById(R.id.usernameError)
 
         eye1 = findViewById(R.id.eye1)
-        var flag1 = false
+        var flag1 = true
+        password.transformationMethod = PasswordTransformationMethod.getInstance()
+
         eye1.setOnClickListener {
             if (!flag1) {
                 flag1 = true
                 eye1.setImageResource(R.drawable.eye_closed)
-                password.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                password.transformationMethod = PasswordTransformationMethod.getInstance()
             } else {
                 flag1 = false
                 eye1.setImageResource(R.drawable.eye_opened)
-                password.transformationMethod = PasswordTransformationMethod.getInstance()
+                password.transformationMethod = HideReturnsTransformationMethod.getInstance()
             }
         }
 
         eye2 = findViewById(R.id.eye2)
-        var flag2 = false
+        var flag2 = true
+        repeatPassword.transformationMethod = PasswordTransformationMethod.getInstance()
+
         eye2.setOnClickListener {
             if (!flag2) {
                 flag2 = true
                 eye2.setImageResource(R.drawable.eye_closed)
-                repeatPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                repeatPassword.transformationMethod = PasswordTransformationMethod.getInstance()
             } else {
                 flag2 = false
                 eye2.setImageResource(R.drawable.eye_opened)
-                repeatPassword.transformationMethod = PasswordTransformationMethod.getInstance()
+                repeatPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
             }
         }
 

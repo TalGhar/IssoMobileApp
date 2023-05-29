@@ -48,6 +48,11 @@ class ProfileFragment : Fragment() {
                 startActivity(intent)
 
             }
+
+            swipeRefreshLayout.setOnRefreshListener {
+                swipeRefreshLayout.isRefreshing = false
+            }
+
         }
 
     }
@@ -76,8 +81,7 @@ class ProfileFragment : Fragment() {
 
         try {
             startActivity(Intent.createChooser(mIntent, "Choose Email Client..."))
-        }
-        catch (e: Exception){
+        } catch (e: Exception) {
             Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
         }
 
