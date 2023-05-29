@@ -39,6 +39,15 @@ class ProfileFragment : Fragment() {
             contact.setOnClickListener {
                 sendEmail(message.text.toString(), spinner2.selectedItem.toString())
             }
+            logout.setOnClickListener {
+                logOut()
+            }
+            declarations.setOnClickListener {
+                val intent = Intent(context, DeclarationViewActivity::class.java)
+                intent.putExtra("ViewType", "assets")
+                startActivity(intent)
+
+            }
         }
 
     }

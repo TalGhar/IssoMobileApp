@@ -51,6 +51,15 @@ class SalesFragment : Fragment() {
             R.drawable.sim1,
         )
 
+        val expandedTextArray = arrayOf(
+            "Быстрое строительство загородных домов по индивидуальным проектам.",
+            "Эксклюзивный дизайн квартир и офисов от профессионалов.",
+            "Качественный ремонт по выгодной цене: соблюдение сроков.",
+            "Индивидуальный подход: уникальность объекта недвижимости.",
+            "Строительство складов и производственных помещений с использованием новейших технологий.",
+            "Планирование и дизайн интерьера от профессионалов: ваш стиль."
+        )
+
         swipeRefreshLayout = view.findViewById(R.id.swipeRefreshLayout)
 
         swipeRefreshLayout.setOnRefreshListener {
@@ -111,6 +120,8 @@ class SalesFragment : Fragment() {
             val dialog = context?.let { it1 -> Dialog(it1) }
             dialog?.setContentView(R.layout.sales_expanded)
             val dialogImageView = dialog?.findViewById<ImageView>(R.id.sales_expanded_image)
+            val dialogTextView = dialog?.findViewById<TextView>(R.id.textView3)
+            dialogTextView?.text = expandedTextArray[s1randomIndex]
             dialogImageView?.setImageDrawable(s1ImageView.drawable)
             dialog?.show()
         }
@@ -119,6 +130,8 @@ class SalesFragment : Fragment() {
             val dialog = context?.let { it1 -> Dialog(it1) }
             dialog?.setContentView(R.layout.sales_expanded)
             val dialogImageView = dialog?.findViewById<ImageView>(R.id.sales_expanded_image)
+            val dialogTextView = dialog?.findViewById<TextView>(R.id.textView3)
+            dialogTextView?.text = expandedTextArray[s2randomIndex]
             dialogImageView?.setImageDrawable(s2ImageView.drawable)
             dialog?.show()
         }
@@ -127,6 +140,8 @@ class SalesFragment : Fragment() {
             val dialog = context?.let { it1 -> Dialog(it1) }
             dialog?.setContentView(R.layout.sales_expanded)
             val dialogImageView = dialog?.findViewById<ImageView>(R.id.sales_expanded_image)
+            val dialogTextView = dialog?.findViewById<TextView>(R.id.textView3)
+            dialogTextView?.text = expandedTextArray[s3randomIndex]
             dialogImageView?.setImageDrawable(s3ImageView.drawable)
             dialog?.show()
         }
@@ -135,6 +150,8 @@ class SalesFragment : Fragment() {
             val dialog = context?.let { it1 -> Dialog(it1) }
             dialog?.setContentView(R.layout.sales_expanded)
             val dialogImageView = dialog?.findViewById<ImageView>(R.id.sales_expanded_image)
+            val dialogTextView = dialog?.findViewById<TextView>(R.id.textView3)
+            dialogTextView?.text = expandedTextArray[s4randomIndex]
             dialogImageView?.setImageDrawable(s4ImageView.drawable)
             dialog?.show()
         }
@@ -143,6 +160,8 @@ class SalesFragment : Fragment() {
             val dialog = context?.let { it1 -> Dialog(it1) }
             dialog?.setContentView(R.layout.sales_expanded)
             val dialogImageView = dialog?.findViewById<ImageView>(R.id.sales_expanded_image)
+            val dialogTextView = dialog?.findViewById<TextView>(R.id.textView3)
+            dialogTextView?.text = expandedTextArray[s5randomIndex]
             dialogImageView?.setImageDrawable(s5ImageView.drawable)
             dialog?.show()
         }
@@ -151,10 +170,26 @@ class SalesFragment : Fragment() {
             val dialog = context?.let { it1 -> Dialog(it1) }
             dialog?.setContentView(R.layout.sales_expanded)
             val dialogImageView = dialog?.findViewById<ImageView>(R.id.sales_expanded_image)
+            val dialogTextView = dialog?.findViewById<TextView>(R.id.textView3)
+            dialogTextView?.text = expandedTextArray[s6randomIndex]
             dialogImageView?.setImageDrawable(s6ImageView.drawable)
             dialog?.show()
         }
 
+        binding?.apply {
+            title1.text = "Быстро!"
+            title2.text = "Эксклюзив!"
+            title3.text = "Качество!"
+            title4.text = "Индивидуально!"
+            title5.text = "Надежно!"
+            title6.text = "Дизайн!"
+            desc1.text = "Быстрое строительство загородных домов по индивидуальным проектам."
+            desc2.text = "Эксклюзивный дизайн квартир и офисов от профессионалов."
+            desc3.text = "Качественный ремонт по выгодной цене: соблюдение сроков."
+            desc4.text = "Индивидуальный подход: уникальность объекта недвижимости."
+            desc5.text = "Строительство складов и производственных помещений с использованием новейших технологий."
+            desc6.text = "Планирование и дизайн интерьера от профессионалов: ваш стиль."
+        }
 
     }
 
