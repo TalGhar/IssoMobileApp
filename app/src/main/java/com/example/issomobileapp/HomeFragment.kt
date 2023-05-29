@@ -121,18 +121,18 @@ class HomeFragment : Fragment() {
             dialog?.show()
         }
 
-        val favouriteIcon = binding?.favouriteButton
+//        val favouriteIcon = binding?.favouriteButton
         var flag = false
 
-        favouriteIcon?.setOnClickListener {
-            if (!flag) {
-                favouriteIcon?.setImageResource(R.drawable.favourite_icon_active)
-                flag = true
-            } else {
-                favouriteIcon?.setImageResource(R.drawable.favourite_icon)
-                flag = false
-            }
-        }
+//        favouriteIcon?.setOnClickListener {
+//            if (!flag) {
+//                favouriteIcon?.setImageResource(R.drawable.favourite_icon_active)
+//                flag = true
+//            } else {
+//                favouriteIcon?.setImageResource(R.drawable.favourite_icon)
+//                flag = false
+//            }
+//        }
 
 
     }

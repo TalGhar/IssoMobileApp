@@ -50,6 +50,9 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+            android:name=".DeclarationViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".SignInActivity"
             android:exported="true">
             <intent-filter>

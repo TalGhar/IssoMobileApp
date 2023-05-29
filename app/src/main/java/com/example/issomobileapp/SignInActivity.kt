@@ -4,11 +4,15 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.InputType
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.view.MotionEvent
 import android.view.Window
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.parse.ParseException
@@ -19,6 +23,8 @@ class SignInActivity : AppCompatActivity() {
     // MARK: Private Properties
     private lateinit var username: EditText
     private lateinit var password: EditText
+
+    private lateinit var eye: ImageView
 
     private lateinit var signInButton: Button
 
@@ -36,6 +42,20 @@ class SignInActivity : AppCompatActivity() {
         signInButton = findViewById(R.id.signInButton)
 
         stillNot = findViewById(R.id.stillNot)
+
+        eye = findViewById(R.id.eye)
+        var flag = false
+        eye.setOnClickListener {
+            if (!flag) {
+                flag = true
+                eye.setImageResource(R.drawable.eye_closed)
+                password.transformationMethod = HideReturnsTransformationMethod.getInstance()
+            } else {
+                flag = false
+                eye.setImageResource(R.drawable.eye_opened)
+                password.transformationMethod = PasswordTransformationMethod.getInstance()
+            }
+        }
 
         stillNot.setOnClickListener {
             stillNot()

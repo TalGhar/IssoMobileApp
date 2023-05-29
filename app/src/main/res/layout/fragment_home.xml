@@ -154,7 +154,8 @@
                             android:layout_centerVertical="true"
                             android:layout_marginEnd="1dp"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/favourite_icon" />
+                            android:src="@drawable/favourite_icon"
+                            android:visibility="invisible" />
 
                         <TextView
                             android:id="@+id/recommendation_title1"
@@ -236,7 +237,7 @@
                         android:ellipsize="end"
                         android:maxLines="1"
                         android:paddingTop="16dp"
-                        android:text="Адрес: Киев"
+                        android:text="Адрес: Евпатория"
                         android:textColor="@color/black"
                         android:textSize="14sp" />
 
