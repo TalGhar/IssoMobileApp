@@ -60,7 +60,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/editTextPassword"
         app:layout_constraintStart_toEndOf="@+id/editTextPassword"
         app:layout_constraintTop_toTopOf="@+id/editTextPassword"
-        app:srcCompat="@drawable/eye_opened" />
+        app:srcCompat="@drawable/eye_closed" />
 
     <EditText
         android:id="@+id/editTextRepeatPassword"
@@ -88,7 +88,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/editTextRepeatPassword"
         app:layout_constraintStart_toEndOf="@+id/editTextRepeatPassword"
         app:layout_constraintTop_toTopOf="@+id/editTextRepeatPassword"
-        app:srcCompat="@drawable/eye_opened" />
+        app:srcCompat="@drawable/eye_closed" />
 
     <EditText
         android:id="@+id/editTextEmail"

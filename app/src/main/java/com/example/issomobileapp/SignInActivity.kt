@@ -44,16 +44,18 @@ class SignInActivity : AppCompatActivity() {
         stillNot = findViewById(R.id.stillNot)
 
         eye = findViewById(R.id.eye)
-        var flag = false
+        var flag = true
+        password.transformationMethod = PasswordTransformationMethod.getInstance()
+
         eye.setOnClickListener {
             if (!flag) {
                 flag = true
                 eye.setImageResource(R.drawable.eye_closed)
-                password.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                password.transformationMethod = PasswordTransformationMethod.getInstance()
             } else {
                 flag = false
                 eye.setImageResource(R.drawable.eye_opened)
-                password.transformationMethod = PasswordTransformationMethod.getInstance()
+                password.transformationMethod = HideReturnsTransformationMethod.getInstance()
             }
         }
 

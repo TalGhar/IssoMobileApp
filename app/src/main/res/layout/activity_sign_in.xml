@@ -83,6 +83,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/editTextLoginPassword"
         app:layout_constraintStart_toEndOf="@+id/editTextLoginPassword"
         app:layout_constraintTop_toTopOf="@+id/editTextLoginPassword"
-        app:srcCompat="@drawable/eye_opened" />
+        app:srcCompat="@drawable/eye_closed" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
