@@ -50,6 +50,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
+    <ImageView
+        android:id="@+id/eye1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextPassword"
+        app:layout_constraintStart_toEndOf="@+id/editTextPassword"
+        app:layout_constraintTop_toTopOf="@+id/editTextPassword"
+        app:srcCompat="@drawable/eye_opened" />
+
     <EditText
         android:id="@+id/editTextRepeatPassword"
         android:layout_width="wrap_content"
@@ -65,6 +77,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
+    <ImageView
+        android:id="@+id/eye2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-32dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextRepeatPassword"
+        app:layout_constraintStart_toEndOf="@+id/editTextRepeatPassword"
+        app:layout_constraintTop_toTopOf="@+id/editTextRepeatPassword"
+        app:srcCompat="@drawable/eye_opened" />
 
     <EditText
         android:id="@+id/editTextEmail"

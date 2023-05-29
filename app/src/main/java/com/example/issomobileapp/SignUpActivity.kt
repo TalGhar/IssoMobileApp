@@ -5,15 +5,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.text.TextUtils
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.util.Patterns
 import android.view.MotionEvent
 import android.view.Window
 import android.view.animation.AnimationUtils
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
 import com.parse.ParseUser;
@@ -29,6 +28,9 @@ class SignUpActivity : AppCompatActivity() {
 
     private lateinit var signUpButton: Button
     private lateinit var alreadyHaveButton: TextView
+
+    private lateinit var eye1: ImageView
+    private lateinit var eye2: ImageView
 
     private lateinit var emailError: TextView
     private lateinit var passwordError: TextView
@@ -54,6 +56,34 @@ class SignUpActivity : AppCompatActivity() {
         passwordError = findViewById(R.id.passwordError)
         repeatPasswordError = findViewById(R.id.repeatPasswordError)
         usernameError = findViewById(R.id.usernameError)
+
+        eye1 = findViewById(R.id.eye1)
+        var flag1 = false
+        eye1.setOnClickListener {
+            if (!flag1) {
+                flag1 = true
+                eye1.setImageResource(R.drawable.eye_closed)
+                password.transformationMethod = HideReturnsTransformationMethod.getInstance()
+            } else {
+                flag1 = false
+                eye1.setImageResource(R.drawable.eye_opened)
+                password.transformationMethod = PasswordTransformationMethod.getInstance()
+            }
+        }
+
+        eye2 = findViewById(R.id.eye2)
+        var flag2 = false
+        eye2.setOnClickListener {
+            if (!flag2) {
+                flag2 = true
+                eye2.setImageResource(R.drawable.eye_closed)
+                repeatPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
+            } else {
+                flag2 = false
+                eye2.setImageResource(R.drawable.eye_opened)
+                repeatPassword.transformationMethod = PasswordTransformationMethod.getInstance()
+            }
+        }
 
         signUpButton.setOnClickListener {
             signUp(
