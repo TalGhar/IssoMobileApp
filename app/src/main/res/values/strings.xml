@@ -30,4 +30,19 @@
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae purus faucibus ornare suspendisse. Sem et tortor consequat id porta nibh venenatis. Fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Urna et pharetra pharetra massa. Turpis nunc eget lorem dolor sed viverra ipsum. Nec feugiat nisl pretium fusce id. Libero volutpat sed cras ornare arcu dui. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Maecenas accumsan lacus vel facilisis volutpat. Aliquet porttitor lacus luctus accumsan tortor. Luctus accumsan tortor posuere ac.
     </string>
 
+    <string-array name="cities">
+        <item>Все</item>
+        <item>Севастополь</item>
+        <item>Евпатория</item>
+        <item>Мирный</item>
+        <item>Поповка</item>
+    </string-array>
+
+    <string-array name="subjects">
+        <item>Разработать план здания</item>
+        <item>Договориться о встрече</item>
+        <item>Жалоба</item>
+        <item>Отзыв о работе приложения</item>
+    </string-array>
+
 </resources>

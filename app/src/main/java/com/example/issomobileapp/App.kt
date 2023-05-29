@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatDelegate
 import com.parse.Parse;
 import com.parse.ParseUser
+import com.yandex.mapkit.MapKitFactory
 
 class App : Application() {
 
@@ -18,6 +19,7 @@ class App : Application() {
                 .server(getString(R.string.back4app_server_url))
                 .build()
         );
+        MapKitFactory.setApiKey("9d95253b-01ea-4b08-b7be-40409f66d997")
 
     }
 }

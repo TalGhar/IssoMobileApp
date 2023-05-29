@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,106 +9,75 @@
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeRefreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_margin="16dp">
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical">
-
-                <ImageView
-                    android:id="@+id/profile_image"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentStart="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/profile_icon" />
-
-                <TextView
-                    android:id="@+id/profile_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_toEndOf="@+id/profile_image"
-                    android:text="Имя Фамилия"
-                    android:textSize="20sp" />
-
-            </RelativeLayout>
+            android:layout_margin="16dp">
 
             <TextView
-                android:id="@+id/profile_birthdate"
-                android:layout_width="match_parent"
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:padding="10dp"
-                android:text="Дата рождения: ДД.ММ.ГГГГ"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/profile_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:padding="10dp"
-                android:text="E-mail: example@example.com"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/profile_phone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:padding="10dp"
-                android:text="Телефон: +7 (123) 456-78-90"
-                android:textSize="16sp" />
+                android:layout_marginBottom="32dp"
+                android:gravity="center"
+                android:text="Вы можете связаться с нами!"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:id="@+id/linearLayout"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView">
 
-                <Button
-                    android:id="@+id/change_password_button"
+                <TextView
+                    android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/rounded_button"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp"
-                    android:text="Изменить пароль"
-                    android:textColor="@android:color/white" />
+                    android:layout_weight="1"
+                    android:text="Тема"
+                    android:textSize="20sp" />
 
-                <Button
-                    android:id="@+id/change_email_button"
+                <Spinner
+                    android:id="@+id/spinner2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:background="@drawable/rounded_button"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp"
-                    android:text="Изменить e-mail"
-                    android:textColor="@android:color/white" />
-
+                    android:entries="@array/subjects"
+                    android:scrollbarSize="4dp" />
             </LinearLayout>
 
-            <Button
-                android:id="@+id/edit_profile_button"
+            <EditText
+                android:id="@+id/message"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:background="@drawable/rounded_button"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:text="Редактировать профиль"
-                android:textColor="@android:color/white" />
+                android:ems="10"
+                android:hint="Сообщение"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-        </LinearLayout>
+            <Button
+                android:id="@+id/contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Отправить"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/message" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </FrameLayout>

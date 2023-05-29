@@ -29,6 +29,7 @@
                     android:layout_height="wrap_content"
                     android:padding="16dp"
                     android:text="Новости"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -122,58 +123,160 @@
 
                 </HorizontalScrollView>
 
-                <!-- Типы построек -->
+
+                <!-- Заголовок блока рекомендаций -->
                 <TextView
-                    android:id="@+id/building_types_header"
+                    android:id="@+id/recommendation_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
-                    android:text="Типы построек"
+                    android:text="Рекомендации"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
-                    <!-- Квадратная кнопка с границей и текстом -->
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="80dp"
-                        android:layout_height="110dp"
-                        android:layout_marginRight="8dp"
-                        android:elevation="4dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:id="@+id/favourite_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="1dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/favourite_icon" />
+
+                        <TextView
+                            android:id="@+id/recommendation_title1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:text="Дом 1"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <!-- HorizontalScrollView для отображения картинок рекомендации -->
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:scrollbars="none">
 
                         <LinearLayout
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:orientation="vertical">
+                            android:orientation="horizontal">
+
+                            <!-- Картинки рекомендации внутри HorizontalScrollView -->
 
                             <ImageView
-                                android:layout_width="match_parent"
+                                android:id="@+id/recommendation_image1"
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                android:layout_marginRight="12dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/evp1" />
+
+                            <ImageView
+                                android:id="@+id/recommendation_image2"
+                                android:layout_width="150dp"
                                 android:layout_height="match_parent"
+                                android:layout_marginRight="12dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/evp1" />
+
+                            <ImageView
+                                android:id="@+id/recommendation_image3"
+                                android:layout_width="150dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginRight="12dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/evp1" />
+
+                            <ImageView
+                                android:id="@+id/recommendation_image"
+                                android:layout_width="100dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginRight="12dp"
                                 android:layout_weight="1"
-                                android:background="@drawable/square_background"
-                                android:scaleType="centerCrop" />
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/evp1" />
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="30dp"
-                                android:padding="8dp"
-                                android:text="Тип 1"
-                                android:textAlignment="center"
-                                android:textSize="12sp" />
-
+                            <ImageView
+                                android:id="@+id/recommendation_image4"
+                                android:layout_width="100dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginRight="12dp"
+                                android:layout_weight="1"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/evp1" />
 
                         </LinearLayout>
 
-                    </androidx.cardview.widget.CardView>
+                    </HorizontalScrollView>
 
+                    <!-- Адрес рекомендации -->
 
-                    <!-- Добавьте еще 2-3 таких квадратных кнопки для типов построек -->
+                    <TextView
+                        android:id="@+id/recommendation_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:paddingTop="16dp"
+                        android:text="Адрес: Киев"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <!-- Количество комнат рекомендации -->
+                    <TextView
+                        android:id="@+id/recommendation_rooms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:paddingTop="4dp"
+                        android:text="Количество комнат: 2"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <!-- Квадратура рекомендации -->
+                    <TextView
+                        android:id="@+id/recommendation_area"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:paddingTop="4dp"
+                        android:text="Квадратура: 100м"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <!-- Цена рекомендации в отдельном поле без отступа -->
+                    <TextView
+                        android:id="@+id/recommendation_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="8dp"
+                        android:text="Цена: 1000000"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
+
 
             </LinearLayout>
 
