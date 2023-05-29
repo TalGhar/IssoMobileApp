@@ -38,4 +38,11 @@
         <item>Поповка</item>
     </string-array>
 
+    <string-array name="subjects">
+        <item>Разработать план здания</item>
+        <item>Договориться о встрече</item>
+        <item>Жалоба</item>
+        <item>Отзыв о работе приложения</item>
+    </string-array>
+
 </resources>

@@ -1,6 +1,7 @@
 package com.example.issomobileapp
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -34,11 +35,11 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //binding.apply {
-        // logout.setOnClickListener {
-        //       logOut()
-        //    }
-        //}
+        binding.apply {
+            contact.setOnClickListener {
+                sendEmail(message.text.toString(), spinner2.selectedItem.toString())
+            }
+        }
 
     }
 
@@ -50,6 +51,25 @@ class ProfileFragment : Fragment() {
                 startActivity(intent)
                 activity?.finish()
             } else Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
+        }
+
+    }
+
+    private fun sendEmail(message: String, subject: String) {
+        val mIntent = Intent(Intent.ACTION_SEND)
+
+        mIntent.data = Uri.parse("mailto:")
+        mIntent.type = "text/plain"
+        val recipient = "oknaumo@yandex.ru"
+        mIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf(recipient))
+        mIntent.putExtra(Intent.EXTRA_SUBJECT, subject)
+        mIntent.putExtra(Intent.EXTRA_TEXT, message)
+
+        try {
+            startActivity(Intent.createChooser(mIntent, "Choose Email Client..."))
+        }
+        catch (e: Exception){
+            Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
         }
 
     }

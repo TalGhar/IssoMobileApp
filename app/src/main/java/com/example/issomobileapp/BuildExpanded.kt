@@ -79,17 +79,21 @@ class BuildExpanded : AppCompatActivity(), DrivingSession.DrivingRouteListener, 
     private lateinit var mapObjects: MapObjectCollection
     private lateinit var drivingRouter: DrivingRouter
     private lateinit var drivingSession: DrivingSession
-
     private lateinit var mapView: MapView
     private lateinit var locationManager: LocationManager
     private val locationPermissionCode = 2
+
     private lateinit var goBackButton: Button
+    private lateinit var cityTV: TextView
+    private lateinit var roomsTV: TextView
+    private lateinit var sizeTV: TextView
+    private lateinit var priceTV: TextView
+
 
     private val evpImageList = listOf(
-        R.drawable.evp1,
-        R.drawable.evp2,
-        R.drawable.evp3,
-        R.drawable.evp4
+        R.drawable.evp_build1,
+        R.drawable.evp_build2,
+        R.drawable.evp_build3
     )
 
     private val sevasImageList = listOf(
@@ -98,16 +102,17 @@ class BuildExpanded : AppCompatActivity(), DrivingSession.DrivingRouteListener, 
         R.drawable.sevas_build3
     )
     private val mirnyiImageList = listOf(
-        R.drawable.sevas1,
-        R.drawable.sevas2,
-        R.drawable.sevas3,
-        R.drawable.sevas4
+        R.drawable.mirn1,
+        R.drawable.mirn2,
+        R.drawable.mirn3,
+        R.drawable.mirn4,
+        R.drawable.mirn5
     )
     private val popovkaImageList = listOf(
-        R.drawable.sevas1,
-        R.drawable.sevas2,
-        R.drawable.sevas3,
-        R.drawable.sevas4
+        R.drawable.popovka_build1,
+        R.drawable.popovka_build2,
+        R.drawable.popovka_build3,
+        R.drawable.popovka_build4
     )
 
     // MARK: Override Functions
@@ -161,6 +166,11 @@ class BuildExpanded : AppCompatActivity(), DrivingSession.DrivingRouteListener, 
 
         // MARK: Other
 
+        cityTV = findViewById(R.id.cityTV)
+        roomsTV = findViewById(R.id.roomsTV)
+        sizeTV = findViewById(R.id.sizeTV)
+        priceTV = findViewById(R.id.priceTV)
+
         goBackButton = findViewById(R.id.goBack)
 
         goBackButton.setOnClickListener {
@@ -179,10 +189,34 @@ class BuildExpanded : AppCompatActivity(), DrivingSession.DrivingRouteListener, 
 
         if (build != null) {
             when(build.city) {
-                "Севастополь" ->  viewPager.adapter = BuildCarouselAdapter(sevasImageList)
-                "Евпатория" ->  viewPager.adapter = BuildCarouselAdapter(evpImageList)
-                "Мирный" -> viewPager.adapter = BuildCarouselAdapter(mirnyiImageList)
-                "Поповка" ->  viewPager.adapter = BuildCarouselAdapter(popovkaImageList)
+                "Севастополь" ->  {
+                    cityTV.text = build.city
+                    roomsTV.text = "Количество комнат: " + build.roomCount.toString()
+                    sizeTV.text = "Квадратура: " + build.size.toString() + "м²"
+                    priceTV.text = "Цена: " + build.price.toString() + "₽"
+                    viewPager.adapter = BuildCarouselAdapter(sevasImageList)
+                }
+                "Евпатория" ->  {
+                    cityTV.text = build.city
+                    roomsTV.text = "Количество комнат: " + build.roomCount.toString()
+                    sizeTV.text = "Квадратура: " + build.size.toString() + "м²"
+                    priceTV.text = "Цена: " + build.price.toString() + "₽"
+                    viewPager.adapter = BuildCarouselAdapter(evpImageList)
+                }
+                "Мирный" -> {
+                    cityTV.text = build.city
+                    roomsTV.text = "Количество комнат: " + build.roomCount.toString()
+                    sizeTV.text = "Квадратура: " + build.size.toString() + "м²"
+                    priceTV.text = "Цена: " + build.price.toString() + "₽"
+                    viewPager.adapter = BuildCarouselAdapter(mirnyiImageList)
+                }
+                "Поповка" ->  {
+                    cityTV.text = build.city
+                    roomsTV.text = "Количество комнат: " + build.roomCount.toString()
+                    sizeTV.text = "Квадратура: " + build.size.toString() + "м²"
+                    priceTV.text = "Цена: " + build.price.toString() + "₽"
+                    viewPager.adapter = BuildCarouselAdapter(popovkaImageList)
+                }
             }
         }
 

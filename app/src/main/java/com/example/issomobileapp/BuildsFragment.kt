@@ -20,10 +20,10 @@ class BuildsFragment : Fragment() {
     private val adapter = BuildAdapter()
     private lateinit var swipeRefreshLayout: SwipeRefreshLayout
     private val imageList = listOf(
-        R.drawable.evp1,
-        R.drawable.evp2,
-        R.drawable.evp3,
-        R.drawable.evp4
+        R.drawable.sevas_build1,
+        R.drawable.evp_build1,
+        R.drawable.mirn1,
+        R.drawable.popovka_build1
     )
     private val titleList = listOf(
         "Дом 1",
